@@ -7,14 +7,22 @@ int main()
 	vector<int> cnt(26,0);
 	for(int i=0;i<s.length();i++)
 		cnt[s[i]-'a']++;
-	int o=0;
+	int flag=1,odd=0;
 	for(int i=0;i<26;i++)
 	{
 		if(cnt[i]%2==1&&cnt[i]!=0)
-			o++;
+		{
+            odd++;
+		}
 	}
-	if(o<=1)
+	if(odd<=1)
 		printf("First\n");
 	else
-		printf("Second\n");
+	{
+		if(odd%2==0)
+			printf("Second\n");
+		else
+			printf("First\n");
+	}
+
 }
